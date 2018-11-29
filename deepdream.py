@@ -145,16 +145,16 @@ def recursive_optimize(layer_tensor, image,
 
 
 session = tf.InteractiveSession(graph=model.graph)
-image = load_image(filename="images/original/AugsburgUni.jpg")
+image = load_image(filename="images/original/paula.jpg")
 
-layer_tensor = model.layer_tensors[8]
+layer_tensor = model.layer_tensors[11]
 
 #img_result = optimize_image(layer_tensor, image,
 #                   num_iterations=10, step_size=6.0, tile_size=400,
 #                   show_gradient=False)
 
 img_result = recursive_optimize(layer_tensor=layer_tensor, image=image,
-                 num_iterations=10, step_size=3.0, rescale_factor=0.7,
-                 num_repeats=8, blend=0.2)
+                 num_iterations=15, step_size=3.0, rescale_factor=0.80,
+                 num_repeats=6, blend=0.35)
 
-save_image(img_result, filename='images/deeped/Uni8.jpg')
+save_image(img_result, filename='images/deeped/paula18.jpg')
